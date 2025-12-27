@@ -1,0 +1,256 @@
+/* ============================
+   IMPORTS
+============================ */
+
+@plugin 'tailwindcss-animate';
+@import "tailwindcss";
+@import "tw-animate-css";
+
+/* ============================
+   BASE RESET
+============================ */
+@tailwind base;
+
+/* Typography + base elements */
+@layer base {
+  html, body {
+    min-height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    background: var(--background);
+    color: var(--foreground);
+  }
+  /* Body text */
+  p, span, div, li, a, button, input {
+    @apply text-base font-normal font-[Poppins];
+  }
+}
+
+html,
+body,
+p,
+span,
+li,
+a,
+div,
+section,
+main,
+article {
+  line-height: var(--a11y-line-height, 1.6) !important;
+}
+
+/* ============================
+   ROOT VARIABLES (LIGHT MODE)
+============================ */
+:root {
+  --base-font-size: 16px;
+  --radius: 0.625rem;
+
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.145 0 0);
+
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.145 0 0);
+
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.145 0 0);
+
+  --primary: oklch(0.205 0 0);
+  --primary-foreground: oklch(0.985 0 0);
+
+  --secondary: oklch(0.97 0 0);
+  --secondary-foreground: oklch(0.205 0 0);
+
+  --muted: oklch(0.97 0 0);
+  --muted-foreground: oklch(0.556 0 0);
+
+  --accent: oklch(0.97 0 0);
+  --accent-foreground: oklch(0.205 0 0);
+
+  --destructive: oklch(0.577 0.245 27.325);
+
+  --border: oklch(0.922 0 0);
+  --input: oklch(0.922 0 0);
+  --ring: oklch(0.708 0 0);
+
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: oklch(0.205 0 0);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.708 0 0);
+}
+
+/* ============================
+   DARK MODE VARIABLES
+============================ */
+.dark {
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+
+  --card: oklch(0.205 0 0);
+  --card-foreground: oklch(0.985 0 0);
+
+  --popover: oklch(0.205 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+
+  --primary: oklch(0.922 0 0);
+  --primary-foreground: oklch(0.205 0 0);
+
+  --secondary: oklch(0.269 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+
+  --accent: oklch(0.269 0 0);
+  --accent-foreground: oklch(0.985 0 0);
+
+  --destructive: oklch(0.704 0.191 22.216);
+
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.556 0 0);
+
+  --chart-1: oklch(0.488 0.243 264.376);
+  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-3: oklch(0.769 0.188 70.08);
+  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-5: oklch(0.645 0.246 16.439);
+
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(1 0 0 / 10%);
+  --sidebar-ring: oklch(0.556 0 0);
+}
+
+/* ============================
+   COMPONENTS & UTILITIES
+============================ */
+@tailwind components;
+@tailwind utilities;
+
+/* Your custom utilities remain unchanged */
+.sectionBg { background-color: #e5e7eb; }
+.dark .sectionBg { background-color: #1f2937; }
+
+.blackBg { background-color: #252525; }
+.footerBg { background-color: #080616; }
+
+.silver { color: #B3B3B3; }
+.g-gray { color: #7E7D80; }
+.g-black { color: #141414; }
+
+.pointer { cursor: pointer; }
+.topBg { background-color:#F2F5F8; }
+.def-color { color: #14265C; }
+.def-bg { background-color: #14265C; }
+
+.def-link-style {
+  text-decoration: none;
+  font-weight: inherit;
+  color: inherit;
+  font-family: inherit;
+}
+
+/* globals.css — add this in a components layer or after tailwind utilities */
+@layer components {
+  .card-surface {
+    /* Light mode: explicit bg-image */
+    background-image: linear-gradient(142.36deg, #F3F3F3 52.23%, #EEECFB 84.62%);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    /* fallback background-color in light mode (optional) */
+    background-color: rgba(243,243,243,1);
+
+    @apply rounded rounded-3xl p-4; /* keep your padding/rounded from the markup */
+  }
+
+  
+  /* Dark mode override: remove image AND set solid color */
+  .dark .card-surface {
+    background-image: none !important;
+   background-color: transparent;
+  }
+}
+
+
+input::-webkit-inner-spin-button,
+input::-webkit-outer-spin-button { @apply appearance-none m-0; }
+input[type="number"] { -moz-appearance: textfield; }
+
+ul.blue-list {
+  list-style-type: disc;
+}
+
+ul.blue-list li::marker {
+  color:#142149;
+  font-size: 1.4em;
+}
+
+
+
+.social-icon {
+  @apply flex items-center justify-center 
+  w-[clamp(2.2rem,4vw,3.2rem)] 
+  h-[clamp(2.2rem,4vw,3.2rem)]
+  border border-gray-300 rounded-full 
+  text-gray-700 hover:text-white hover:bg-blue-600 
+  transition;
+}
+
+@layer utilities {
+.p-base-res { @apply text-base; }
+.border-top-gray { @apply border-t border-gray-200 mt-4; }
+.darkModeText { @apply text-gray-300; }
+.darkModeBg { @apply bg-[#171717];}
+.sub-title {@apply px-[1%] lg:px-[10%] xl:px-[16%] 2xl:px-[22%]}
+.content-padding {@apply px-[1%] md:px-[6%]}
+.grayText {@apply text-[#515154]}
+.lightPurple {@apply text-[#543CDA]}
+.lightBorder {@apply border-[#F0F0F0]}
+}
+* {
+  line-height: var(--a11y-line-height, 1.6) !important;
+}
+
+.required { color: #F88C0D; }
+/* Navigation breakpoints */
+@media (min-width: 800px) { 
+  .topNavDTop { display: block; }
+  .topNavMobile { display: none; }
+}
+@media (max-width: 799.98px) {
+  .topNavDTop { display: none; }
+  .topNavMobile { display: block; }
+}
+
+
+
+
+
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee { animation: marquee 36s linear infinite; }
+
+/* ⏸ Pause on hover */
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
